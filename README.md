@@ -12,7 +12,7 @@ This is a thin fork of [verajosemanuel/ESmisc](https://github.com/verajosemanuel
 
 ### to_number() ###
 
-**to_number()** is a quick & dirty function to translate spanish spelled quantities into their numerical counterparts.
+**to_number()** is a quick & dirty function to translate English spelled quantities into their numerical counterparts.
 Given a numerical quantity spelled in English, **to_number** translates it to integer.
 
 ### Requirements: 
