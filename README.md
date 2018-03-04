@@ -1,6 +1,6 @@
 
 
-# words2number: R package for converting English number words into numeric digits [![Build Status](https://travis-ci.org/benmarwick/words2number.svg?branch=master)](https://travis-ci.org/benmarwick/words2number)
+# words2number: Convert English number words into numeric digits [![Build Status](https://travis-ci.org/benmarwick/words2number.svg?branch=master)](https://travis-ci.org/benmarwick/words2number)
 
 ### Installation: ###
 
