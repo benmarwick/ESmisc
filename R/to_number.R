@@ -1,21 +1,18 @@
-#' translate spanish spelled quantities into their integer counterparts.
+#' translate English spelled quantities into their integer counterparts.
 #'
-#' Allows you to translate to integer numerical words spelled in spanish.
+#' Allows you to translate to integer numerical words spelled in English
 #' Text must be previously cleaned & removed extraneous words or symbols
-#' Quantities MUST be written in a correct Spanish (this is not a grammar tool)
+#' Quantities MUST be written in a correct English (this is not a grammar tool)
 #' The upper limit is up to the millions range. Cents must be removed.
 #'
 #' @keywords money, currency, euros
 #' @export
-#' @param x A spanish spelled number.
+#' @param x A English spelled number.
 #' @examples
-#' to_number("mil trescientos noventa y dos")
+#' to_number("one thousand and seventy two")
 #'
 #'
-#' ## Example dataframe is provided: cantidades
-#'
-#' cantidades$var3 <- lapply(cantidades$var2, to_number)
-#'
+
 
 utils::globalVariables(".")
 
@@ -27,48 +24,48 @@ to_number <- function(x) {
   }
 
     x <- gsub("^mil", "1000)+", x , ignore.case = T) %>%
-    gsub("once", "+11", . , ignore.case = T) %>%
-    gsub("doce", "+12", . , ignore.case = T ) %>%
-    gsub("trece", "+13", . , ignore.case = T) %>%
-    gsub("catorce", "+14", . , ignore.case = T) %>%
-    gsub("quince", "+15", . , ignore.case = T) %>%
-    gsub("dieciseis", "+16", . , ignore.case = T) %>%
-    gsub("diecisiete|diez y siete", "+17", . , ignore.case = T) %>%
-    gsub("dieciocho", "+18", . , ignore.case = T) %>%
-    gsub("diecinueve", "+19", . , ignore.case = T) %>%
-    gsub("veinte|veinti", "+20", . , ignore.case = T) %>%
-    gsub("treinta", "+30", . , ignore.case = T) %>%
-    gsub("cuarenta", "+40", . , ignore.case = T) %>%
-    gsub("cincuenta", "+50", . , ignore.case = T) %>%
-    gsub("sesenta", "+60", . , ignore.case = T) %>%
-    gsub("setenta", "+70", . , ignore.case = T) %>%
-    gsub("ochenta", "+80", . , ignore.case = T) %>%
-    gsub("noventa", "+90", . , ignore.case = T) %>%
-    gsub("doscientos", "+200", . , ignore.case = T) %>%
-    gsub("trescientos", "+300", . , ignore.case = T) %>%
-    gsub("cuatrocientos", "+400", . , ignore.case = T) %>%
-    gsub("quinientos", "+500", . , ignore.case = T) %>%
-    gsub("seiscientos", "+600", . , ignore.case = T) %>%
-    gsub("setecientos", "+700", . , ignore.case = T) %>%
-    gsub("ochocientos", "+800", . , ignore.case = T) %>%
-    gsub("novecientos", "+900", . , ignore.case = T) %>%
-    gsub("uno", "+1", . , ignore.case = T) %>%
-    gsub("dos", "+2", . , ignore.case = T) %>%
-    gsub("tres", "+3", . , ignore.case = T) %>%
-    gsub("cuatro", "+4", . , ignore.case = T) %>%
-    gsub("cinco", "+5", . , ignore.case = T) %>%
-    gsub("seis", "+6", . , ignore.case = T) %>%
-    gsub("siete", "+7", . , ignore.case = T) %>%
-    gsub("ocho", "+8", . , ignore.case = T) %>%
-    gsub("nueve", "+9", . , ignore.case = T) %>%
-    gsub("millones", ")*(1000000)+(0", . , ignore.case = T) %>%
+    gsub("eleven", "+11", . , ignore.case = T) %>%
+    gsub("twelve", "+12", . , ignore.case = T ) %>%
+    gsub("thirteen", "+13", . , ignore.case = T) %>%
+    gsub("fourteen", "+14", . , ignore.case = T) %>%
+    gsub("fifteen", "+15", . , ignore.case = T) %>%
+    gsub("sixteen", "+16", . , ignore.case = T) %>%
+    gsub("seventeen", "+17", . , ignore.case = T) %>%
+    gsub("eighteen", "+18", . , ignore.case = T) %>%
+    gsub("nineteen", "+19", . , ignore.case = T) %>%
+    gsub("twenty", "+20", . , ignore.case = T) %>%
+    gsub("thirty", "+30", . , ignore.case = T) %>%
+    gsub("fourty", "+40", . , ignore.case = T) %>%
+    gsub("fifty", "+50", . , ignore.case = T) %>%
+    gsub("sixty", "+60", . , ignore.case = T) %>%
+    gsub("seventy", "+70", . , ignore.case = T) %>%
+    gsub("eighty", "+80", . , ignore.case = T) %>%
+    gsub("ninety", "+90", . , ignore.case = T) %>%
+    gsub("two hundred", "+200", . , ignore.case = T) %>%
+    gsub("three hundred", "+300", . , ignore.case = T) %>%
+    gsub("four hundred", "+400", . , ignore.case = T) %>%
+    gsub("five hundred", "+500", . , ignore.case = T) %>%
+    gsub("six hundred", "+600", . , ignore.case = T) %>%
+    gsub("seven hundred", "+700", . , ignore.case = T) %>%
+    gsub("eight hundred", "+800", . , ignore.case = T) %>%
+    gsub("nine hundred", "+900", . , ignore.case = T) %>%
+    gsub("one", "+1", . , ignore.case = T) %>%
+    gsub("two", "+2", . , ignore.case = T) %>%
+    gsub("three", "+3", . , ignore.case = T) %>%
+    gsub("four", "+4", . , ignore.case = T) %>%
+    gsub("five", "+5", . , ignore.case = T) %>%
+    gsub("six", "+6", . , ignore.case = T) %>%
+    gsub("seven", "+7", . , ignore.case = T) %>%
+    gsub("eight", "+8", . , ignore.case = T) %>%
+    gsub("nine", "+9", . , ignore.case = T) %>%
+    gsub("millions", ")*(1000000)+(0", . , ignore.case = T) %>%
     gsub("millon", ")*(1000000)+(0", . , ignore.case = T) %>%
-    gsub("mil", ")*(1000)+(0", . , ignore.case = T) %>%
-    gsub("ciento", "+100", . , ignore.case = T) %>%
-    gsub("cien", "+100", . , ignore.case = T) %>%
-    gsub("diez", "+10", . , ignore.case = T) %>%
-    gsub("un", "+1", . , ignore.case = T) %>%
-    gsub("Y", "", . , ignore.case = T) %>%
+    gsub("thousand", ")*(1000)+(0", . , ignore.case = T) %>%
+    gsub("hundred", "+100", . , ignore.case = T) %>%
+    gsub("hundred", "+100", . , ignore.case = T) %>%
+    gsub("ten", "+10", . , ignore.case = T) %>%
+    gsub("one", "+1", . , ignore.case = T) %>%
+    gsub("and", "", . , ignore.case = T) %>%
     gsub(" ", "", . , ignore.case = T) %>%
     gsub("^", "(0", . , ignore.case = T) %>%
     gsub("$", ")", . , ignore.case = T) %>%
