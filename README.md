@@ -1,7 +1,6 @@
 
 
 # words2number: R package for converting English number words into numeric digits [![Build Status](https://travis-ci.org/benmarwick/words2number.svg?branch=master)](https://travis-ci.org/benmarwick/words2number)
-<img src="tools/readme/logo.png" align="right" />
 
 ### Installation: ###
 
@@ -9,13 +8,12 @@
 devtools::install_github("benmarwick/words2number")
 ```
 
-This is a fork of [verajosemanuel/ESmisc](https://github.com/verajosemanuel/ESmisc), which is for Spanish numbers. I've just changed the Spanish to English. 
+This is a thin fork of [verajosemanuel/ESmisc](https://github.com/verajosemanuel/ESmisc), which is for Spanish numbers. I've just changed the Spanish to English. 
 
 ### to_number() ###
 
 **to_number()** is a quick & dirty function to translate spanish spelled quantities into their numerical counterparts.
 Given a numerical quantity spelled in English, **to_number** translates it to integer.
-
 
 ### Requirements: 
 - magrittr must be installed.
