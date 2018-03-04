@@ -3,7 +3,10 @@ Type: Package
 Title: Convert number words to numeric digits
 Version: 0.2.0
 Date: 2018-03-04
-Authors@R: c(person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com", role = c("aut","cre")), person( "Ben Marwick", email = "benmarwick@gmail.com",role = c("aut"))                
+Authors@R: c(
+    person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com", role = c("aut","cre")), 
+    person( "Ben", "Marwick", email = "benmarwick@gmail.com", role = c("aut"))
+    )
 URL: https://github.com/benmarwick/words2number
 BugReports: https://github.com/benmarwick/words2number/issues
 Maintainer: Ben Marwick <benmarwick@gmail.com>
