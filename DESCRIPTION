@@ -22,6 +22,5 @@ LazyData: true
 Collate:
     'to_number.R'
     'words2number.R'
-    'zzz.R'
 RoxygenNote: 6.0.1.9000
 Suggests: testthat, tidyr
