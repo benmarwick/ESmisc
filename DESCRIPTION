@@ -2,29 +2,23 @@ Package: words2number
 Type: Package
 Title: Convert number words to numeric digits
 Version: 0.2.0
-Date: 2017-07-01
-Authors@R: c(person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com",
-                role = c("aut","cre"),
-            person( "Ben Marwick", email = "benmarwick@gmail.com",
-                role = c("aut"))                
+Date: 2018-03-04
+Authors@R: c(person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com", role = c("aut","cre")), person( "Ben Marwick", email = "benmarwick@gmail.com",role = c("aut"))                
 URL: https://github.com/benmarwick/words2number
 BugReports: https://github.com/benmarwick/words2number/issues
 Maintainer: Ben Marwick <benmarwick@gmail.com>
 Depends: magrittr, xml2
 Description: Character vector to numerical translation from English
     spelled monetary quantities. Text must be previously cleaned & removed 
-    extraneous words, symbols or cents. Quantities MUST be written in a correct 
+    extraneous words, symbols or cents. Quantities must be written in a correct 
     English cause this isn't a grammar tool. Upper limit is up to the millions 
     range.     
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Collate:
-    'geocode_cadastral.R'
     'to_number.R'
-    'cadastral_references-data.R'
-    'cantidades-data.R'
-    'ESmisc.R'
+    'words2number.R'
     'zzz.R'
 RoxygenNote: 6.0.1.9000
 Suggests: testthat, tidyr
