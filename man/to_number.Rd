@@ -2,27 +2,22 @@
 % Please edit documentation in R/to_number.R
 \name{to_number}
 \alias{to_number}
-\title{translate spanish spelled quantities into their integer counterparts.}
+\title{translate English spelled quantities into their integer counterparts.}
 \usage{
 to_number(x)
 }
 \arguments{
-\item{x}{A spanish spelled number.}
+\item{x}{A English word for a number.}
 }
 \description{
-Allows you to translate to integer numerical words spelled in spanish.
+Allows you to translate to integer numerical words spelled in English
 Text must be previously cleaned & removed extraneous words or symbols
-Quantities MUST be written in a correct Spanish (this is not a grammar tool)
+Quantities MUST be written in a correct English (this is not a grammar tool)
 The upper limit is up to the millions range. Cents must be removed.
 }
 \examples{
-to_number("mil trescientos noventa y dos")
+to_number("one thousand and seventy two")
 
-1392
-
-## Example dataframe is provided: cantidades
-
-cantidades$var3 <- lapply(cantidades$var2, to_number)
 
 }
 \keyword{currency,}

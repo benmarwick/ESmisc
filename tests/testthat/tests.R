@@ -1,12 +1,57 @@
 context("requests")
 
 
-
-
 test_that("to_number returns integer from string.", {
-  result <- to_number("one thousand two hundred ànd thirty four")
-
+  result <- to_number("one thousand two hundred and thirty four")
   expect_type(result, "integer")
+})
+
+test_that("to_number returns a correct translation from string: ", {
+  result <- to_number("five")
+  target <- 5
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("nineteen")
+  target <- 19
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("thirty-seven")
+  target <- 37
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("eightyfour")
+  target <- 84
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("ninety nine")
+  target <- 99
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("one hundred and five")
+  target <- 105
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("two hundred and nineteen")
+  target <- 219
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("five hundred and thirty seven")
+  target <- 537
+  expect_equivalent(result, target)
 })
 
 
@@ -17,14 +62,22 @@ test_that("to_number returns a correct translation from string.", {
 })
 
 
-test_that("to_number works ok with millions from string.", {
-  result <- to_number("two million four hundred and eighty two thousand one hundred and three")
-  target <- 2482103
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("forty thousand and seven")
+  target <- 40007
   expect_equivalent(result, target)
 })
 
 
+
+# test_that("to_number works ok with millions from string.", {
+#   result <- to_number("two million four hundred and eighty two thousand one hundred and three")
+#   target <- 2482103
+#   expect_equivalent(result, target)
+# })
+
+
 test_that("to_number error message when unexpected string.", {
 
-  expect_error(to_number("The input is not recognized as a number."), "*unexpected input*")
+  expect_error(to_number("not a number"))
 })

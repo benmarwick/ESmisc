@@ -1,4 +1,4 @@
 library(testthat)
-library(ESmisc)
+library(words2number)
 
-test_check("ESmisc")
+test_check("words2number")

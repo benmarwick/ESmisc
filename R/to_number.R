@@ -7,23 +7,21 @@
 #'
 #' @keywords money, currency, euros
 #' @export
-#' @param x A English spelled number.
+#' @param x A English word for a number.
+#' @importFrom magrittr %>%
 #' @examples
 #' to_number("one thousand and seventy two")
 #'
 #'
 
-
-utils::globalVariables(".")
-
 to_number <- function(x) {
 
   if (!requireNamespace("magrittr", quietly = TRUE)) {
-    stop("magrittr needed for this function to work. Please install it.",
+    stop("magrittr is needed for this function to work. Please install it.",
          call. = FALSE)
   }
-
-    x <- gsub("^mil", "1000)+", x , ignore.case = T) %>%
+    x <- 
+    gsub("-", " ", x) %>% 
     gsub("eleven", "+11", . , ignore.case = T) %>%
     gsub("twelve", "+12", . , ignore.case = T ) %>%
     gsub("thirteen", "+13", . , ignore.case = T) %>%
@@ -35,12 +33,13 @@ to_number <- function(x) {
     gsub("nineteen", "+19", . , ignore.case = T) %>%
     gsub("twenty", "+20", . , ignore.case = T) %>%
     gsub("thirty", "+30", . , ignore.case = T) %>%
-    gsub("fourty", "+40", . , ignore.case = T) %>%
+    gsub("forty", "+40", . , ignore.case = T) %>%
     gsub("fifty", "+50", . , ignore.case = T) %>%
     gsub("sixty", "+60", . , ignore.case = T) %>%
     gsub("seventy", "+70", . , ignore.case = T) %>%
     gsub("eighty", "+80", . , ignore.case = T) %>%
     gsub("ninety", "+90", . , ignore.case = T) %>%
+    gsub("one hundred", "+100", . , ignore.case = T) %>%
     gsub("two hundred", "+200", . , ignore.case = T) %>%
     gsub("three hundred", "+300", . , ignore.case = T) %>%
     gsub("four hundred", "+400", . , ignore.case = T) %>%
@@ -61,7 +60,6 @@ to_number <- function(x) {
     gsub("millions", ")*(1000000)+(0", . , ignore.case = T) %>%
     gsub("millon", ")*(1000000)+(0", . , ignore.case = T) %>%
     gsub("thousand", ")*(1000)+(0", . , ignore.case = T) %>%
-    gsub("hundred", "+100", . , ignore.case = T) %>%
     gsub("hundred", "+100", . , ignore.case = T) %>%
     gsub("ten", "+10", . , ignore.case = T) %>%
     gsub("one", "+1", . , ignore.case = T) %>%
