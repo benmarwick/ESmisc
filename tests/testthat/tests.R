@@ -68,6 +68,89 @@ test_that("to_number returns a correct translation from string.", {
   expect_equivalent(result, target)
 })
 
+# Ordinals
+
+test_that("to_number returns a correct translation from string: ", {
+  result <- to_number("fifth")
+  target <- 5
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("nineteenth")
+  target <- 19
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("thirty-seventh")
+  target <- 37
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("eightyfourth")
+  target <- 84
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("ninety nineth")
+  target <- 99
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("one hundred and fifth")
+  target <- 105
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("two hundred and nineteenth")
+  target <- 219
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("five hundred and thirty seventh")
+  target <- 537
+  expect_equivalent(result, target)
+})
+
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("one thousand two hundred and thirty fourth")
+  target <- 1234
+  expect_equivalent(result, target)
+})
+
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("forty thousand and seventh")
+  target <- 40007
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("ninety first")
+  target <- 91
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("fifty second")
+  target <- 52
+  expect_equivalent(result, target)
+})
+
+test_that("to_number returns a correct translation from string.", {
+  result <- to_number("thirty third")
+  target <- 33
+  expect_equivalent(result, target)
+})
+
+
 
 
 # test_that("to_number works ok with millions from string.", {

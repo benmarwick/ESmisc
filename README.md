@@ -8,7 +8,7 @@ words2number: Convert English number words into numeric digits [![Build Status](
 devtools::install_github("benmarwick/words2number")
 ```
 
-This is a fork of [verajosemanuel/ESmisc](https://github.com/verajosemanuel/ESmisc), which is for Spanish numbers. I've just changed the Spanish to English.
+This is a fork of [verajosemanuel/ESmisc](https://github.com/verajosemanuel/ESmisc), which is for Spanish numbers. I've changed the Spanish to English and made a few other minor modifications.
 
 ### How to use
 
@@ -33,16 +33,37 @@ to_number("fortytwo")
 
     ## [1] 42
 
+It can also handle ordinals:
+
+``` r
+to_number("forty second")
+```
+
+    ## [1] 42
+
+``` r
+to_number("forty-third")
+```
+
+    ## [1] 43
+
+``` r
+to_number("fortyfourth")
+```
+
+    ## [1] 44
+
 ### Usage notes
 
 -   `to_number` needs clean text. The input must be previously cleaned with extraneous words and symbols removed.
 -   Quantities must be written in simple, common English (this function is very simple).
+-   It currently doesn't handle decimals (e.g. "three point one") or fractions (e.g. "three-quarters")
 -   The upper limit is up to the millions range.
 -   There are some tests in the package already, but this is experimental, and there may be some numbers that it doesn't work on. Please let me know if you find them!
 
 ### Also relevant
 
-If you want to go the other way, convert digits into English words, you can use the [english](https://cran.r-project.org/package=english) package. For example, `as.character(english::english(5))` will give "five". There is also `replace_number()` from the [textclean](https://cran.r-project.org/package=textclean) package.
+If you want to go the other way, convert digits into English words, you can use the [english](https://cran.r-project.org/package=english) package. For example, `as.character(english::english(5))` will give "five". There is also `replace_number()` from the [textclean](https://cran.r-project.org/package=textclean) package. I took some inspiration for the ordinals from the [finnfiddle/words-to-numbers](https://github.com/finnfiddle/words-to-numbers) js library.
 
 ### Contributing
 
