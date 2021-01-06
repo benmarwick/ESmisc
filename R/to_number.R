@@ -11,7 +11,7 @@
 #' @importFrom magrittr %>%
 #' @examples
 #' to_number("one thousand and seventy two")
-#'
+#' to_number(c("thirty seven", "forty two"))
 #'
 
 to_number <- function(x) {
@@ -20,7 +20,7 @@ to_number <- function(x) {
     stop("magrittr is needed for this function to work. Please install it.",
          call. = FALSE)
   }
-    x <- 
+    expr <- 
     gsub("-", " ", x) %>% 
       gsub("eleventh", "+11", . , ignore.case = T) %>%
       gsub("twelfth", "+12", . , ignore.case = T ) %>%
@@ -112,5 +112,6 @@ to_number <- function(x) {
     gsub("\\+\\+", "\\+\\(", . , ignore.case = T ) %>%
     gsub("\\)\\+\\)", "\\)", . , ignore.case = T )
 
-  return(as.integer(eval(parse(text = x))))
+  result <- sapply(expr, function(y) eval(parse(text = y)), USE.NAMES = FALSE)
+  setNames(result, x)
 }
