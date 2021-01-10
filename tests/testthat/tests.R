@@ -150,8 +150,11 @@ test_that("to_number returns a correct translation from string.", {
   expect_equivalent(result, target)
 })
 
-
-
+test_that("to number works with vector inputs.", {
+  result <- to_number(c("one", "two", "forty-two"))
+  target <- c(1, 2, 42)
+  expect_equivalent(result, target)
+})
 
 test_that("to_number works ok with millions from string.", {
   result <- to_number("two million four hundred and eighty two thousand one hundred and three")

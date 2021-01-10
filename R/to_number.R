@@ -112,7 +112,7 @@ to_number <- function(x) {
     gsub("\\+\\+", "\\+\\(", . , ignore.case = T ) %>%
     gsub("\\)\\+\\)", "\\)", . , ignore.case = T )
   
-  if (grepl('[[:alpha:]]', expr))
+  if (any(grepl('[[:alpha:]]', expr)))
     stop("expression ", expr, " cannot be evaluated")
 
   result <- sapply(expr, function(y) eval(parse(text = y)), USE.NAMES = FALSE)
