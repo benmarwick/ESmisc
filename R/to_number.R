@@ -83,7 +83,7 @@ to_number <- function(x) {
       gsub("sixth", "+6", . , ignore.case = T) %>%
       gsub("seventh", "+7", . , ignore.case = T) %>%
       gsub("eighth", "+8", . , ignore.case = T) %>%
-      gsub("nineth", "+9", . , ignore.case = T) %>%
+      gsub("ninth", "+9", . , ignore.case = T) %>%
     gsub("one", "+1", . , ignore.case = T) %>%
     gsub("two", "+2", . , ignore.case = T) %>%
     gsub("three", "+3", . , ignore.case = T) %>%
@@ -95,7 +95,7 @@ to_number <- function(x) {
     gsub("nine", "+9", . , ignore.case = T) %>%
     
     gsub("millions", ")*(1000000)+(0", . , ignore.case = T) %>%
-    gsub("millon", ")*(1000000)+(0", . , ignore.case = T) %>%
+    gsub("million", ")*(1000000)+(0", . , ignore.case = T) %>%
     gsub("thousandth", ")*(1000)+(0", . , ignore.case = T) %>%
     gsub("thousand", ")*(1000)+(0", . , ignore.case = T) %>%
     gsub("hundredth", "+100", . , ignore.case = T) %>%
