@@ -5,7 +5,8 @@ Version: 0.2.0
 Date: 2018-03-04
 Authors@R: c(
     person( "Jose Manuel","Vera Oteo", email = "vera.josemanuel@gmail.com", role = c("aut","cre")), 
-    person( "Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut")
+    person( "Ben", "Marwick", email = "benmarwick@gmail.com", role = "aut"),
+    person( "David", "Selby", email = "David.Selby@manchester.ac.uk", role = "ctb")
     )
 URL: https://github.com/benmarwick/words2number
 BugReports: https://github.com/benmarwick/words2number/issues
