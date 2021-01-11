@@ -11,7 +11,7 @@
 #' @importFrom magrittr %>%
 #' @examples
 #' to_number("one thousand and seventy two")
-#'
+#' to_number(c("thirty seven", "forty two"))
 #'
 
 to_number <- function(x) {
@@ -20,25 +20,25 @@ to_number <- function(x) {
     stop("magrittr is needed for this function to work. Please install it.",
          call. = FALSE)
   }
-    x <- 
+  expr <- 
     gsub("-", " ", x) %>% 
-      gsub("eleventh", "+11", . , ignore.case = T) %>%
-      gsub("twelfth", "+12", . , ignore.case = T ) %>%
-      gsub("thirteenth", "+13", . , ignore.case = T) %>%
-      gsub("fourteenth", "+14", . , ignore.case = T) %>%
-      gsub("fifteenth", "+15", . , ignore.case = T) %>%
-      gsub("sixteenth", "+16", . , ignore.case = T) %>%
-      gsub("seventeenth", "+17", . , ignore.case = T) %>%
-      gsub("eighteenth", "+18", . , ignore.case = T) %>%
-      gsub("nineteenth", "+19", . , ignore.case = T) %>%
-      gsub("twentieth", "+20", . , ignore.case = T) %>%
-      gsub("thirtieth", "+30", . , ignore.case = T) %>%
-      gsub("fortieth", "+40", . , ignore.case = T) %>%
-      gsub("fiftieth", "+50", . , ignore.case = T) %>%
-      gsub("sixtieth", "+60", . , ignore.case = T) %>%
-      gsub("seventieth", "+70", . , ignore.case = T) %>%
-      gsub("eightieth", "+80", . , ignore.case = T) %>%
-      gsub("ninetieth", "+90", . , ignore.case = T) %>%
+    gsub("eleventh", "+11", . , ignore.case = T) %>%
+    gsub("twelfth", "+12", . , ignore.case = T ) %>%
+    gsub("thirteenth", "+13", . , ignore.case = T) %>%
+    gsub("fourteenth", "+14", . , ignore.case = T) %>%
+    gsub("fifteenth", "+15", . , ignore.case = T) %>%
+    gsub("sixteenth", "+16", . , ignore.case = T) %>%
+    gsub("seventeenth", "+17", . , ignore.case = T) %>%
+    gsub("eighteenth", "+18", . , ignore.case = T) %>%
+    gsub("nineteenth", "+19", . , ignore.case = T) %>%
+    gsub("twentieth", "+20", . , ignore.case = T) %>%
+    gsub("thirtieth", "+30", . , ignore.case = T) %>%
+    gsub("fortieth", "+40", . , ignore.case = T) %>%
+    gsub("fiftieth", "+50", . , ignore.case = T) %>%
+    gsub("sixtieth", "+60", . , ignore.case = T) %>%
+    gsub("seventieth", "+70", . , ignore.case = T) %>%
+    gsub("eightieth", "+80", . , ignore.case = T) %>%
+    gsub("ninetieth", "+90", . , ignore.case = T) %>%
     gsub("eleven", "+11", . , ignore.case = T) %>%
     gsub("twelve", "+12", . , ignore.case = T ) %>%
     gsub("thirteen", "+13", . , ignore.case = T) %>%
@@ -57,33 +57,33 @@ to_number <- function(x) {
     gsub("eighty", "+80", . , ignore.case = T) %>%
     gsub("ninety", "+90", . , ignore.case = T) %>%
     
-      gsub("one hundredth", "+100", . , ignore.case = T) %>%
-      gsub("two hundredth", "+200", . , ignore.case = T) %>%
-      gsub("three hundredth", "+300", . , ignore.case = T) %>%
-      gsub("four hundredth", "+400", . , ignore.case = T) %>%
-      gsub("five hundredth", "+500", . , ignore.case = T) %>%
-      gsub("six hundredth", "+600", . , ignore.case = T) %>%
-      gsub("seven hundredth", "+700", . , ignore.case = T) %>%
-      gsub("eight hundredth", "+800", . , ignore.case = T) %>%
-      gsub("nine hundredth", "+900", . , ignore.case = T) %>%
-      gsub("one hundred", "+100", . , ignore.case = T) %>%
-      gsub("two hundred", "+200", . , ignore.case = T) %>%
-      gsub("three hundred", "+300", . , ignore.case = T) %>%
-      gsub("four hundred", "+400", . , ignore.case = T) %>%
-      gsub("five hundred", "+500", . , ignore.case = T) %>%
-      gsub("six hundred", "+600", . , ignore.case = T) %>%
-      gsub("seven hundred", "+700", . , ignore.case = T) %>%
-      gsub("eight hundred", "+800", . , ignore.case = T) %>%
-      gsub("nine hundred", "+900", . , ignore.case = T) %>%
-      gsub("first", "+1", . , ignore.case = T) %>%
-      gsub("second", "+2", . , ignore.case = T) %>%
-      gsub("third", "+3", . , ignore.case = T) %>%
-      gsub("fourth", "+4", . , ignore.case = T) %>%
-      gsub("fifth", "+5", . , ignore.case = T) %>%
-      gsub("sixth", "+6", . , ignore.case = T) %>%
-      gsub("seventh", "+7", . , ignore.case = T) %>%
-      gsub("eighth", "+8", . , ignore.case = T) %>%
-      gsub("nineth", "+9", . , ignore.case = T) %>%
+    gsub("one hundredth", "+100", . , ignore.case = T) %>%
+    gsub("two hundredth", "+200", . , ignore.case = T) %>%
+    gsub("three hundredth", "+300", . , ignore.case = T) %>%
+    gsub("four hundredth", "+400", . , ignore.case = T) %>%
+    gsub("five hundredth", "+500", . , ignore.case = T) %>%
+    gsub("six hundredth", "+600", . , ignore.case = T) %>%
+    gsub("seven hundredth", "+700", . , ignore.case = T) %>%
+    gsub("eight hundredth", "+800", . , ignore.case = T) %>%
+    gsub("nine hundredth", "+900", . , ignore.case = T) %>%
+    gsub("one hundred", "+100", . , ignore.case = T) %>%
+    gsub("two hundred", "+200", . , ignore.case = T) %>%
+    gsub("three hundred", "+300", . , ignore.case = T) %>%
+    gsub("four hundred", "+400", . , ignore.case = T) %>%
+    gsub("five hundred", "+500", . , ignore.case = T) %>%
+    gsub("six hundred", "+600", . , ignore.case = T) %>%
+    gsub("seven hundred", "+700", . , ignore.case = T) %>%
+    gsub("eight hundred", "+800", . , ignore.case = T) %>%
+    gsub("nine hundred", "+900", . , ignore.case = T) %>%
+    gsub("first", "+1", . , ignore.case = T) %>%
+    gsub("second", "+2", . , ignore.case = T) %>%
+    gsub("third", "+3", . , ignore.case = T) %>%
+    gsub("fourth", "+4", . , ignore.case = T) %>%
+    gsub("fifth", "+5", . , ignore.case = T) %>%
+    gsub("sixth", "+6", . , ignore.case = T) %>%
+    gsub("seventh", "+7", . , ignore.case = T) %>%
+    gsub("eighth", "+8", . , ignore.case = T) %>%
+    gsub("ninth", "+9", . , ignore.case = T) %>%
     gsub("one", "+1", . , ignore.case = T) %>%
     gsub("two", "+2", . , ignore.case = T) %>%
     gsub("three", "+3", . , ignore.case = T) %>%
@@ -95,7 +95,7 @@ to_number <- function(x) {
     gsub("nine", "+9", . , ignore.case = T) %>%
     
     gsub("millions", ")*(1000000)+(0", . , ignore.case = T) %>%
-    gsub("millon", ")*(1000000)+(0", . , ignore.case = T) %>%
+    gsub("million", ")*(1000000)+(0", . , ignore.case = T) %>%
     gsub("thousandth", ")*(1000)+(0", . , ignore.case = T) %>%
     gsub("thousand", ")*(1000)+(0", . , ignore.case = T) %>%
     gsub("hundredth", "+100", . , ignore.case = T) %>%
@@ -111,6 +111,10 @@ to_number <- function(x) {
     gsub("\\(0\\(", "", . , ignore.case = T ) %>%
     gsub("\\+\\+", "\\+\\(", . , ignore.case = T ) %>%
     gsub("\\)\\+\\)", "\\)", . , ignore.case = T )
+  
+  if (any(grepl('[[:alpha:]]', expr)))
+    stop("expression ", expr, " cannot be evaluated")
 
-  return(as.integer(eval(parse(text = x))))
+  result <- sapply(expr, function(y) eval(parse(text = y)), USE.NAMES = FALSE)
+  setNames(as.integer(result), x)
 }
