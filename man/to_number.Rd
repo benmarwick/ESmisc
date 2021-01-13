@@ -17,7 +17,7 @@ The upper limit is up to the millions range. Cents must be removed.
 }
 \examples{
 to_number("one thousand and seventy two")
-
+to_number(c("thirty seven", "forty two"))
 
 }
 \keyword{currency,}

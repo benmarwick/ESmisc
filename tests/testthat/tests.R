@@ -162,6 +162,11 @@ test_that("to_number works ok with millions from string.", {
   expect_equivalent(result, target)
 })
 
+test_that("to_number works ok with zero.", {
+  result <- to_number("zero")
+  target <- 0
+  expect_equivalent(result, target)
+})
 
 test_that("to_number error message when unexpected string.", {
 

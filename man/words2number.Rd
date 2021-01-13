@@ -3,7 +3,6 @@
 \docType{package}
 \name{words2number}
 \alias{words2number}
-\alias{words2number-package}
 \title{words2number: A package to convert number words to numeric digits}
 \description{
 This package provides one important function:

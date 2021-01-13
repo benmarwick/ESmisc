@@ -75,6 +75,7 @@ to_number <- function(x) {
     gsub("seven hundred", "+700", . , ignore.case = T) %>%
     gsub("eight hundred", "+800", . , ignore.case = T) %>%
     gsub("nine hundred", "+900", . , ignore.case = T) %>%
+    gsub("zero", "0", . , ignore.case = T) %>%
     gsub("first", "+1", . , ignore.case = T) %>%
     gsub("second", "+2", . , ignore.case = T) %>%
     gsub("third", "+3", . , ignore.case = T) %>%
